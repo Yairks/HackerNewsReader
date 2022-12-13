@@ -8,11 +8,6 @@ const { MongoClient, ServerApiVersion } = require('mongodb');
 
 require("dotenv").config({ path: path.resolve(__dirname, '.env') })
 
-if (process.argv.length != 3) {
-  console.error("Usage campServer.js port");
-  process.exit(1);
-}
-
 // MongoDB initialization
 const userName = process.env.MONGO_DB_USERNAME;
 const password = process.env.MONGO_DB_PASSWORD;
@@ -103,7 +98,7 @@ async function main() {
   });
 }
 
-const portNumber = process.env.PORT || 3001;
+const portNumber = 5000;
 const app = express();  /* app is a request handler function */
 app.use(bodyParser.urlencoded({ extended: false }));
 
