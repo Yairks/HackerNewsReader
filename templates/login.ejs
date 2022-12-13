@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Log in to Hacker News Reader</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <h1>Hacker News Reader</h1>
+  <h2>Log in</h2>
+  <form action="http://localhost:5000/processLogin" method="post">
+    <fieldset>
+      <label><strong>Email Address: </strong><input type="email" name="email"></label>
+      <br><br>
+      <label><strong>Password: </strong><input type="password" name="password"></label>
+      <br>
+      <br>
+    </fieldset>
+    <br><br>
+    <input type="reset" />
+    <input type="submit" value="Log in" />
+  </form>
+  <br>
+  <hr>
+  <a href="/">HOME</a>
+</body>
+
+</html>

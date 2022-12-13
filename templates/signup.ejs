@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Signup for Hacker News Reader</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <h1>Hacker News Reader</h1>
+  <h2>Sign up now!</h2>
+  <form action="http://localhost:5000/processSignup" method="post">
+    <fieldset>
+      <label><strong>First Name: </strong><input type="text" name="firstname" /></label>
+      <br><br>
+      <label><strong>Last Name: </strong><input type="text" name="lastname" /></label>
+      <br><br>
+      <label><strong>Email Address: </strong><input type="email" name="email"></label>
+      <br><br>
+      <label><strong>Password: </strong><input type="password" name="password"></label>
+      <br>
+      <br>
+    </fieldset>
+    <br><br>
+    <input type="reset" />
+    <input type="submit" value="Sign up!" />
+  </form>
+  <br>
+  <hr>
+  <a href="/">HOME</a>
+</body>
+
+</html>
