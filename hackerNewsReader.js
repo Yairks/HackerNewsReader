@@ -6,7 +6,7 @@ const path = require("path");
 const bodyParser = require("body-parser"); /* To handle post parameters */
 const { MongoClient, ServerApiVersion } = require('mongodb');
 
-require("dotenv").config({ path: path.resolve(__dirname, 'credentialsDontPost/.env') })
+require("dotenv").config({ path: path.resolve(__dirname, '.env') })
 
 if (process.argv.length != 3) {
   console.error("Usage campServer.js port");
@@ -18,6 +18,7 @@ const userName = process.env.MONGO_DB_USERNAME;
 const password = process.env.MONGO_DB_PASSWORD;
 const db = process.env.MONGO_DB_NAME;
 const collection = process.env.MONGO_COLLECTION;
+const rapid_api_key = process.env.RAPID_API_KEY;
 
 const databaseAndCollection = { db, collection };
 const uri = `mongodb+srv://${userName}:${password}@cluster0.skujjp6.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;
@@ -45,7 +46,7 @@ const topStoryOptions = {
   url: 'https://community-hacker-news-v1.p.rapidapi.com/topstories.json',
   params: { print: 'pretty' },
   headers: {
-    'X-RapidAPI-Key': '92b8de2135msh5facda1c5bd7c21p12e235jsnb7719dd89276',
+    'X-RapidAPI-Key': 'c1c202befcmsh2dab5714e585a87p17d0e1jsnf9f1f43bfe59',
     'X-RapidAPI-Host': 'community-hacker-news-v1.p.rapidapi.com'
   }
 };
@@ -60,7 +61,7 @@ async function getTopStories() {
       url: `https://community-hacker-news-v1.p.rapidapi.com/item/${response.data[i]}.json`,
       params: { print: 'pretty' },
       headers: {
-        'X-RapidAPI-Key': '92b8de2135msh5facda1c5bd7c21p12e235jsnb7719dd89276',
+        'X-RapidAPI-Key': 'c1c202befcmsh2dab5714e585a87p17d0e1jsnf9f1f43bfe59',
         'X-RapidAPI-Host': 'community-hacker-news-v1.p.rapidapi.com'
       }
     };
