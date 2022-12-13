@@ -76,6 +76,7 @@ async function main() {
     console.error(e);
   }
 
+  const portNumber = process.env.PORT || 5001;
   app.listen(portNumber);
   console.log(`Web server started and running at port ${portNumber}`);
 
@@ -98,7 +99,7 @@ async function main() {
   });
 }
 
-const portNumber = 5000;
+
 const app = express();  /* app is a request handler function */
 app.use(bodyParser.urlencoded({ extended: false }));
 
