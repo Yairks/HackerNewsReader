@@ -82,7 +82,7 @@ async function main() {
   }
 
   app.listen(portNumber);
-  console.log(`Web server started and running at http://localhost:${portNumber}`);
+  console.log(`Web server started and running at port ${portNumber}`);
 
   process.stdout.write("Type stop to shutdown the server: ");
   process.stdin.setEncoding("utf8"); /* encoding */
@@ -103,7 +103,7 @@ async function main() {
   });
 }
 
-const portNumber = process.argv[2];
+const portNumber = process.env.PORT || 3001;
 const app = express();  /* app is a request handler function */
 app.use(bodyParser.urlencoded({ extended: false }));
 
